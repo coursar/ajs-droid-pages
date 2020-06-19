@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="root"></pre>
+    <script>
+        const root = document.getElementById('root');
+        console.log(globalThis);
+        transformed = Object.entries(globalThis)
+          .filter(([k, v]) => !(v instanceof Window))
+          .reduce((acc, curr) => { return acc[curr[0]] = curr[1], acc}, {});
+        const json = JSON.stringify(transformed, null, 4);
+        root.innerHTML = json;
+    </script>
+</body>
+</html>
