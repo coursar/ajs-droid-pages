@@ -11,12 +11,6 @@
     <button id="show-toast">Show Toast</button>
     <pre id="root"></pre>
     <script>
-        // const root = document.getElementById('root');
-        // transformed = Object.Objectentries(globalThis)
-        //   .filter(([k, v]) => !(v instanceof Window))
-        //   .reduce((acc, curr) => { return acc[curr[0]] = curr[1], acc}, {});
-        // const json = JSON.stringify(transformed, null, 4);
-        // root.innerHTML = json;
         document.getElementById('show-toast').addEventListener('click', () => {
             Android.showToast('Integration Works!');
         });
